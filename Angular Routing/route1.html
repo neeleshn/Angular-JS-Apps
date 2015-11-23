@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Week 08 Experiments</title>
+    <link rel="stylesheet" href="../../css/week03/bootstrap-3.3.2-dist/css/bootstrap.min.css" />
+    <script src="../../css/week05/angular.min.js"></script>
+    <script src="../../css/week05/angular-route.js"></script>
+</head>
+<body ng-app="RouteApp" ng-controller="RouteCtrl">
+    <div class="container">
+        <nav>
+            <a href="#/page1">Page 1</a> |
+            <a href="#/page2">Page 2</a> |
+            <a href="#/page3">Page 3</a>
+        </nav>
+        <div ng-view>
+            <h1>
+                {{hello}}</h1>
+        </div>
+    </div>
+    <script>
+        function RouteFn($scope) {
+            $scope.hello = "Hello from Controller";
+        }
+
+        function ConfigFn($scope) {
+            $routeProvider.
+            when('/page1', {
+                templateUrl: 'pages/page1.html'
+            }).
+            when('/page2', {
+                templateUrl: 'pages/page2.html'
+            }).
+            when('/page3', {
+                templateUrl: 'pages/page3.html'
+            }).
+            otherwise({
+                redirectTo: '/page1'
+            });
+        }
+
+        angular.module('RouteApp', ['ngRoute']).controller("RouteCtrl", RouteFn);
+        angular.module('RouteApp', ['ngRoute']).config("RouteCtrl", ConfigFn);
+    </script>
+</body>
+</html>

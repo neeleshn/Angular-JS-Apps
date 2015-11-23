@@ -1,0 +1,414 @@
+<html>
+<head>
+    <title>Leave Request Form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/LeaveCSS.css" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/LeaveCtrl.js"></script>
+    <script src="js/LeaveApp.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="background-color: #ddffdd">
+            <h1>
+                <b>Technologies Used</b></h1>
+            <ol>
+                <li>HTML 5</li>
+                <li>CSS</li>
+                <li>BootStrap</li>
+                <li>Angular JS</li>
+            </ol>
+            <br />
+            <h3>
+                Why Angular JS?</h3>
+            <p>
+                Angular JS is Dynamic. We can bind elements dynamically and use them in the page
+                without reloading the page. We can display the elements typed in the page by binding
+                it. We don't need to reload or submit the page for validation.
+            </p>
+            <br />
+            <br />
+        </div>
+        <div class="row" style="background-color: #ffeeff">
+            <h1>
+                <b>Application Guidelines</b></h1>
+            <ol>
+                <li>Enter Name. The red instruction <span style="color: red">Enter Name!!!</span> will
+                    appear until you enter a name. Every field has similar instruction.</li>
+                <li>Enter Email. The red instruction <span style="color: red">Invalid Email Address!!!</span>
+                    will appear until you enter an email address in the format <b>first.last@boston.gov</b>
+                    or <b>first.m.last@boston.gov</b>. It won't accept a different domain address.</li>
+                <li>Select Office </li>
+                <li>Select Department which is a <u>dependent dropdown box of Office.</u> </li>
+                <li>Enter Location. </li>
+                <li>Enter Telephone / Extension. It takes only numbers and upto 10 digits because extension
+                    can be less than 10 digits. Characters other than numbers will see an error as <span
+                        style="color: red">Enter Numbers Only!!!</span></li>
+                <li>Select type of leave.</li>
+                <li>If you select type of leave as
+                    <input type="radio" value="other" /><b>Other</b> then a text box will appear below
+                    for explaination.</li>
+                <li>Enter Beginning date and time of leave. </li>
+                <li>Enter Ending date and time of leave. </li>
+                <li>The
+                    <button class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    button will remain disabled until a leave type is selected, if leave type is other
+                    then until explain box is filled, both the dates are entered and end date is after
+                    the begin date.</li>
+                <li>The red instruction <span style="color: red">Enter both the dates!!!</span> will
+                    appear only if there is not even one entry of leave period. </li>
+                <li>The red instruction <span style="color: red">Add atleast 1 entry of leave!!!</span>
+                    will appear only if there is not even one entry of leave period. </li>
+                <li>Add an entry of leave to see a grid below, showing the added dates </li>
+                <li>Click remove button to remove that entry. </li>
+                <li>Click edit button to edit that entry. </li>
+                <li>If the leave date and beginning date are same then the duration of leave is represented
+                    in hours else in days . </li>
+                <li>If the vacation leave is more than a week. Then an option appears below to request for advance pay.</li>
+                <li>
+                    <button class="btn btn-success">
+                        Submit <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                    will remain disabled until all the fields are entered without any errors. To be
+                    precise, if there is even one red instruction in the form, the submit button will
+                    remain disbaled.</li>
+                <li>Click
+                    <button class="btn btn-success">
+                        Submit <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                    to submit. </li>
+                <li>After Submitting, find the summary of the form below.</li>
+                <li>Click
+                    <button class="btn btn-warning">
+                        Reset <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                    to go back to the original form.</li>
+            </ol>
+            <br />
+            <br />
+        </div>
+        <div class="row" style="background-color: #ffffcc">
+            <br />
+            <br />
+            <h1>
+                <b>CSS & Bootstrap</b></h1>
+            <div class="row">
+                <div class="col-sm-6 col-sm4-style">
+                    <b>Code </b>
+                </div>
+                <div class="col-sm-6 col-sm4-style">
+                    <b>Styled Element </b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <pre>
+.col-sm4-style {
+    background-color: black;
+    color: White;
+    height:40px;
+    padding:1%;
+    border-radius:5px;
+}</pre>
+                </div>
+                <div class="col-sm-2">
+                    &nbsp;</div>
+                <div class="col-sm-4 col-sm4-style">
+                    <b>Name </b>
+                </div>
+                <div class="col-sm-2">
+                    &nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <pre>
+.col-sm8-style 
+{
+    background-color: #bbbbbb;
+    height: 40px;
+    padding: 0.7% 2%;
+    border-radius:5px;
+}</pre>
+                </div>
+                <div class="col-sm-2">
+                    &nbsp;</div>
+                <div class="col-sm-4 col-sm8-style">
+                    <b>
+                        <input />
+                    </b>
+                </div>
+                <div class="col-sm-2">
+                    &nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <pre>
+&lt;button class="btn btn-success"&gt;
+    &lt;span class="glyphicon glyphicon-plus"&gt;&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;button class="btn btn-warning"&gt;
+    &lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt;
+&lt;/button&gt;
+
+&lt;button class="btn btn-danger"&gt;
+    &lt;span class="glyphicon glyphicon-remove"&gt;&lt;/span&gt;
+&lt;/button&gt;
+</pre>
+                </div>
+                <div class="col-sm-2">
+                    &nbsp;</div>
+                <div class="col-sm-4">
+                    <br />
+                    <br />
+                    <button class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    <br />
+                    <br />
+                    <button class="btn btn-warning">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <br />
+                    <br />
+                    <button class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    &nbsp;</div>
+            </div>
+            <br />
+            <br />
+        </div>
+        <div class="row" style="background-color: #ddeeff">
+            <br />
+            <br />
+            <h1>
+                <b>JavaScript</b></h1>
+            <div class="row">
+                <div class="col-sm-6 col-sm4-style">
+                    <b>Code </b>
+                </div>
+                <div class="col-sm-6 col-sm4-style">
+                    <b>Description </b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+$scope.mailChange = function () {
+    var testmail1 = /^([a-zA-Z0-9])+\.([a-zA-Z0-9])+\@boston.gov$/;
+
+    var testmail2 = /^([a-zA-Z0-9])+\.([a-zA-Z])\.([a-zA-Z0-9])+\@boston.gov$/;
+
+    if (!((testmail2.test($scope.emailmodel)) || (testmail1.test($scope.emailmodel))))
+
+        $scope.mailerror = "Invalid Email Address!!!";
+
+    else $scope.mailerror = "";
+}
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        This function is called whenever there is a change in the email input section in the html page. This code validates the email using regex. It forces the email to be in the format of first.last@boston.gov or first.m.last@boston.gov.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+$scope.offChange = function () { 
+    if ($scope.officemodel == "")
+        $scope.depts = null;
+    if ($scope.officemodel == "bra")
+        $scope.depts = braDept;
+    if ($scope.officemodel == "edic")
+        $scope.depts = edicDept;
+    if ($scope.officemodel == "union")
+        $scope.depts = unionDept;        
+}
+
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        This function is called whenever there is a change in the dropdown selection of <b>Office</b>. This code allocates the departments as per the Office Selected.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+$scope.teleChange = function () { 
+    var testTele = /^([0-9])+$/;
+    if (!(testTele.test($scope.teleModel)))
+        $scope.teleError = "Enter Only Numbers!!!";
+    else $scope.teleError = "";
+}
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        This function validates the telephone number entered in the box. It shows error whenever a character other than digits are entered.                   
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+$scope.typeChange = function () {
+    if ($scope.typeModel == "other") {
+        if (!$scope.expModel) {
+            $scope.expError = true;
+        }
+        else $scope.expError = false;
+    }
+    else $scope.expError = false;
+}
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        This function checks the leave type selected and if the leave type is "other" then it checks if the explain box is filled or not.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+$scope.dateChange = function () {
+    if ($scope.endModel && $scope.beginModel) {
+        if ($scope.endModel < $scope.beginModel) {
+            $scope.dateError = 
+            'End Date should be after Begin Date';
+            $scope.dateDisabled = true;
+        }
+        else {
+            $scope.dateError = '';
+            $scope.dateDisabled = false;
+        }
+    }
+}
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        This function checks if the end date entered is after the begin date or not.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+$scope.editClick = function (x) { 
+    $scope.beginModel = $scope.dates[x].date1;
+    $scope.endModel = $scope.dates[x].date2;
+    $scope.typeModel = $scope.dates[x].type;
+    $scope.expModel = $scope.dates[x].exp;
+    $scope.dates.splice(x, 1);
+}
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        Makes the leave entry editable, upon clicking edit button.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+$scope.reset = function () {
+    $scope.empmodel = null;
+    $scope.emailmodel = null;
+    $scope.mailError = "";
+    $scope.typeModel = null;
+    $scope.expModel = null;
+    $scope.officemodel = null;
+    $scope.deptmodel = null;
+    $scope.locModel = null;
+    $scope.teleModel = null;
+    $scope.beginModel = null;
+    $scope.endModel = null;
+    $scope.payModel = null;
+    $scope.dates = [];
+    $scope.submitShow = false;
+}
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        This function resets the form.
+                    </p>
+                </div>
+            </div>
+            <br /><br /><br /><br />
+        </div>
+        <div class="row" style="background-color: #ffcc66">
+            <br /><br />
+            <h1><b>HTML</b></h1>
+            <div class="row">
+                <div class="col-sm-6 col-sm4-style">
+                    <b>Code </b>
+                </div>
+                <div class="col-sm-6 col-sm4-style">
+                    <b>Description </b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+&lt;select name="department" class="inputStyle" ng-model="deptmodel" ng-options="dept.value as dept.option for dept in depts" required&gt;
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        This HTML code checks fills up the departments dropdown list which depends upon the office value selected.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+&lt;button class="btn btn-success pad" 
+ng-disabled="LeaveForm.begin.$error.required || 
+LeaveForm.end.$error.required || 
+LeaveForm.leaveType.$error.required || 
+dateDisabled || 
+expError"
+ng-model="addModel" ng-click="addClick()" name="dateAdd" formnovalidate&gt;
+&lt;span class="glyphicon glyphicon-plus"&gt;&lt;/span&gt;
+&lt;/button&gt;
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        This HTML code keeps the button to add a leave entry disabled until a leave type is selected, if leave type is other then until explain box is filled, both the dates are entered and end date is after the begin date.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+<pre>
+&lt;div class="row" ng-repeat="x in dates"&gt;
+    &lt;div class="col-md-2 col-sm8-style"&gt;
+        {{x.type}}
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        This HTML code loops through an array to display all the elements in the array in a grid structure.
+                    </p>
+                </div>
+            </div>
+        <br /><br /><br /><br />
+        </div>
+    </div>
+</body>
+</html>
